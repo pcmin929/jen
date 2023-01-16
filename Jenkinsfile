@@ -9,14 +9,14 @@ pipeline {
     stage('docker build') {
       steps {
         sh '''
-        docker build -t rapa.iptime.org:5000/mynginx .
+        sudo docker build -t rapa.iptime.org:5000/mynginx .
         '''
       }
     }
     stage('deploy k8s') {
       steps {
         sh '''
-        kubectl apply -f np-pod.yml
+        sudo kubectl apply -f np-pod.yml
         '''
       }
     }
