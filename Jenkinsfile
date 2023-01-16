@@ -19,7 +19,7 @@ pipeline {
       steps {
         sh '''
         sudo kubectl delete -f np-pod.yml
-        'sleep 10'
+        sleep 10
         sudo kubectl apply -f np-pod.yml
         '''
       }
