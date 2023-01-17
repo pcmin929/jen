@@ -18,7 +18,7 @@ pipeline {
     stage('deploy k8s') {
       steps {
         sh '''
-        sudo sed 's/IMAGE_VERSION/${BUILD_NUMBER}/g' np-pod.yaml > np-pod-deploy.yaml
+        sudo sed 's/IMAGE_VERSION/${BUILD_NUMBER}/g' np-pod.yml > np-pod-deploy.yml
         sudo kubectl apply -f np-pod-deploy.yml
         sudo rm -rf np-pod-deploy.yml
         '''
