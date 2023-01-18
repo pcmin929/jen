@@ -19,14 +19,14 @@ pipeline {
     stage('K8S Manifest Update') {
       steps {
         git credentialsId: '{git_pcmin929}',
-              url: 'https://github.com/pcmin929/jen',
+              url: 'https://github.com/pcmin929/argocd',
               branch: 'main'
         
         sh '''
-        sudo sed "s/IMAGE_VERSION/${BUILD_NUMBER}/g" np-pod.txt > np-pod-deploy.yml
+        sudo sed "s/IMAGE_VERSION/${BUILD_NUMBER}/g" np-pod.yml > np-pod-deploy.yml
+        sudo git remote set-url origin git@github.com:pcmin929/argocd.git
         sudo git add np-pod-deploy.yml
         sudo git commit -m "[UPDATE] mynginx:${BUILD_NUMBER} image versioning"
-        sudo git remote set-url origin git@github.com:pcmin929/jen.git
         sudo git push -u origin main        
         '''
       }
