@@ -25,7 +25,7 @@ pipeline {
         sh '''
         sudo sed "s/IMAGE_VERSION/${BUILD_NUMBER}/g" np-pod.txt > np-pod-deploy.yml
         sudo git add np-pod-deploy.yml
-        sudo git commit -m "[UPDATE] mynginx:{BUILD_NUMBER} image versioning"
+        sudo git commit -m "[UPDATE] mynginx:${BUILD_NUMBER} image versioning"
         sudo git remote set-url origin git@github.com:pcmin929/jen.git
         sudo git push -u origin main        
         '''
