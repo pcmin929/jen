@@ -9,7 +9,7 @@ metadata:
 spec:
   containers:
     - name: np-container
-      image: rapa.iptime.org:5000/mynginx:152
+      image: rapa.iptime.org:5000/mynginx:153
 
 ---
 apiVersion: v1
