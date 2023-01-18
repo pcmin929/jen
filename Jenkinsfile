@@ -20,7 +20,7 @@ pipeline {
       steps {
         git credentialsId: '{git_pcmin929}',
               url: 'https://github.com/pcmin929/jen',
-              branch: 'master'
+              branch: 'main'
         
         sh '''
         sudo sed "s/IMAGE_VERSION/${BUILD_NUMBER}/g" np-pod.yml > np-pod-deploy.yml
