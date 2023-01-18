@@ -18,7 +18,7 @@ pipeline {
     
     stage('K8S Manifest Update') {
       steps {
-        git credentialsId: '{pcmin929_testpipe}',
+        git credentialsId: '{git_pcmin929}',
               url: 'https://github.com/pcmin929/jen',
               branch: 'main'
         
